@@ -92,7 +92,7 @@ while True:
     resized=cv2.resize(roi,(28,28),interpolation=cv2.INTER_AREA)
     resized=cv2.cvtColor(resized,cv2.COLOR_BGR2GRAY)
     dadada=model.predict_classes(np.expand_dims(np.expand_dims(resized,axis=2),axis=0))[0]
-    cv2.putText(frame,letters[dadada],(200,200),cv2.FONT_HERSHEY_SIMPLEX,3,(0,0,122),3)
+    cv2.putText(frame,letters[dadada],(100,100),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,122),1)
     cv2.imshow('frame',frame)
     cv2.imshow('mask',resized)
     if(cv2.waitKey(1) & 0xFF==ord('q')):
